@@ -42,7 +42,7 @@ const UserInfo = () => {
       .catch((error) => {
         console.log(error);
       });
-  }, [userInfo]);
+  }, [userInfo, handleView, saveUser]);
 
   const handleFidClick = useCallback(() => {
     setIsFindMode(true);
@@ -50,7 +50,7 @@ const UserInfo = () => {
 
   const handleSearchUser = useCallback(() => {
     getUsers(searchUser.current?.value ?? "");
-  }, []);
+  }, [getUsers]);
 
   return (
     <div className="mt-4">
